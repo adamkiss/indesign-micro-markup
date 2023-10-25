@@ -1,0 +1,19 @@
+<template webc:root>
+	<uxp-panel id="randomPanel">
+		<mm-checkbox id="one"></mm-checkbox>
+		<mm-checkbox id="two"></mm-checkbox>
+	</uxp-panel>
+</template>
+
+<script type="module">
+	import {$} from '../utils/dom.js'
+	window.customElements.define("mm-panel", class extends HTMLElement {
+		constructor() {
+			super()
+		}
+
+		connectedCallback() {
+			console.log('panel connected')
+		}
+	})
+</script>

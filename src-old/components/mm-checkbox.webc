@@ -1,0 +1,16 @@
+<sp-field-label :for="id" class="flex">
+	<sp-detail class="disabled">CONVERT MARKDOWN LINKS</sp-detail>
+	<sp-switch :id="id"></sp-switch>
+</sp-field-label>
+
+<script>
+	window.customElements.define("mm-checkbox", class extends HTMLElement {
+		constructor() {
+			super()
+		}
+
+		connectedCallback() {
+			console.log('checkbox connected')
+		}
+	})
+</script>

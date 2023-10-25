@@ -1,14 +1,18 @@
 {
   "name": "com.adamkiss.magic-markup",
   "description": "Magically convert markup to styles",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "esbuild --bundle --watch plugin=src/plugin.js style=src/style.css index=src/index.html --external:uxp --external:indesign --outdir=plugin --loader:.html=copy --loader:.css=copy",
-    "build": "esbuild --bundle --target=es6 plugin=src/plugin.js style=src/style.css index=src/index.html --external:uxp --external:indesign --outdir=plugin --loader:.html=copy --loader:.css=copy"
+    "start": "vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "Adam Kiss",
   "license": "Apache-2.0",
   "devDependencies": {
-    "esbuild": "^0.19.5"
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "rollup-plugin-copy": "^3.5.0",
+    "svelte": "^4.0.5",
+    "vite": "^4.4.5"
   }
 }
