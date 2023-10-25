@@ -8,6 +8,9 @@ export default defineConfig({
 		target: 'es6',
 		outDir: 'plugin',
 		rollupOptions: {
+			external: [
+				'uxp', 'indesign'
+			],
 			output: {
 				esModule: false,
 				preserveModules: false,
@@ -19,9 +22,7 @@ export default defineConfig({
 	plugins: [
 		svelte({
 			onwarn: (warning, handler) => {
-				if (warning.code.startsWith("a11y-")) {
-					return false;
-				}
+				if (warning.code.startsWith("a11y-")) return;
 				handler(warning);
 			}
 		}),
